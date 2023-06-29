@@ -18,9 +18,11 @@
 #include <imgui/imgui_impl_glfw.h>
 #include <imgui/imgui_impl_opengl3.h>
 
-#include "TextRenderer.h"
-#include "ModelHandler.h"
-#include "SkyBox.h"
+#include <TextRenderer/TextRenderer.h>
+#include <ModelHandler/ModelHandler.h>
+#include <SkyBox/Skybox.h>
+
+
 
 class Simulation
 {
@@ -82,6 +84,7 @@ private:
 
 	bool startKeyPressed;
 	bool settingsKeyPressed;
+	bool shadingKeyPressed;
 
 	//Buffer
 	unsigned int screenVAO;
@@ -96,7 +99,10 @@ private:
 	//Skybox
 	Skybox *skyBox;
 	Skybox *spaceBox;
+	Skybox* forestBox;
+	Skybox* cityBox;
 	int skyBoxChoice;
+	int shadingChoice;
 
 	std::vector<std::string> sky
 	{
@@ -116,6 +122,24 @@ private:
 			"resources\\textures\\skybox\\space_1_bottom.jpg",
 			"resources\\textures\\skybox\\space_1_front.jpg",
 			"resources\\textures\\skybox\\space_1_back.jpg"
+	};
+	std::vector<std::string> forest
+	{
+		"resources\\textures\\skybox\\forest_1_right.jpg",
+			"resources\\textures\\skybox\\forest_1_left.jpg",
+			"resources\\textures\\skybox\\forest_1_top.jpg",
+			"resources\\textures\\skybox\\forest_1_bottom.jpg",
+			"resources\\textures\\skybox\\forest_1_front.jpg",
+			"resources\\textures\\skybox\\forest_1_back.jpg"
+	};
+	std::vector<std::string> city
+	{
+		"resources\\textures\\skybox\\city_2_right.jpg",
+			"resources\\textures\\skybox\\city_2_left.jpg",
+			"resources\\textures\\skybox\\city_2_top.jpg",
+			"resources\\textures\\skybox\\city_2_bottom.jpg",
+			"resources\\textures\\skybox\\city_2_front.jpg",
+			"resources\\textures\\skybox\\city_2_back.jpg"
 	};
 
 

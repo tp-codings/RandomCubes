@@ -67,6 +67,8 @@ Simulation::Simulation(GLFWwindow* window, int WINDOW_WIDTH, int WINDOW_HEIGHT)
 
 	this->skyBox = new Skybox(this->sky);
 	this->spaceBox = new Skybox(this->space);
+	this->forestBox = new Skybox(this->forest);
+	this->cityBox = new Skybox(this->city);
 
 	//ImGUI Setup
 	IMGUI_CHECKVERSION();
@@ -223,10 +225,14 @@ void Simulation::initVariables()
 	//Key pressed booleans
 	this->startKeyPressed = false;
 	this->settingsKeyPressed = false;
+	this->shadingKeyPressed = false;
+
+	this->shadingChoice = 0;
 
 	this->translations.push_back(glm::vec3(0.0f));
 	this->colors.push_back(BLUE_GREEN);
 	this->counter = 0;
+	this->skyBoxChoice = 1;
 
 }
 
@@ -269,6 +275,31 @@ void Simulation::processInput(float deltaTime)
 	if (glfwGetKey(this->window, GLFW_KEY_ENTER) == GLFW_RELEASE)
 	{
 		this->startKeyPressed = false;
+	}
+	if (glfwGetKey(this->window, GLFW_KEY_B) == GLFW_PRESS && !this->shadingKeyPressed)
+	{
+		this->shadingChoice = ++this->shadingChoice%2;
+		this->shadingKeyPressed = true;
+	}
+	if (glfwGetKey(this->window, GLFW_KEY_B) == GLFW_RELEASE)
+	{
+		this->shadingKeyPressed = false;
+	}
+	if (glfwGetKey(this->window, GLFW_KEY_4) == GLFW_PRESS)
+	{
+		this->skyBoxChoice = 4;
+	}
+	if (glfwGetKey(this->window, GLFW_KEY_3) == GLFW_PRESS)
+	{
+		this->skyBoxChoice = 3;
+	}
+	if (glfwGetKey(this->window, GLFW_KEY_2) == GLFW_PRESS)
+	{
+		this->skyBoxChoice = 2;
+	}
+	if (glfwGetKey(this->window, GLFW_KEY_1) == GLFW_PRESS)
+	{
+		this->skyBoxChoice = 1;
 	}
 }
 
@@ -366,7 +397,37 @@ void Simulation::DrawSettings()
 		if (ImGui::Button(play))
 		{
 			this->start = !this->start;
+		}		
+		const char* shading = "Reflection";
+		if (this->shadingChoice == 1) {
+			shading = "Colors";
 		}
+		ImGui::SameLine();
+		if (ImGui::Button(shading))
+		{
+			this->shadingChoice = ++this->shadingChoice % 2;
+		}		
+		if (ImGui::Button("Ocean"))
+		{
+			this->skyBoxChoice = 1;
+		}
+		ImGui::SameLine();
+		if (ImGui::Button("Space"))
+		{
+			this->skyBoxChoice = 2;
+		}
+		ImGui::SameLine();
+		if (ImGui::Button("Forest"))
+		{
+			this->skyBoxChoice = 3;
+		}
+		ImGui::SameLine();
+		if (ImGui::Button("City"))
+		{
+			this->skyBoxChoice = 4;
+		}
+
+
 		ImGui::ColorPicker3("DirLight", (float*)&this->dirLightColor, ImGuiColorEditFlags_InputRGB);
 		ImGui::End();
 
@@ -403,6 +464,8 @@ void Simulation::DrawCube()
 	this->cubeShader.setVec3("lightColor", glm::vec3(BLACK));
 	this->cubeShader.setVec3("lightPos", this->dirLightPos);
 	this->cubeShader.setVec3("viewPos", camera.Position);
+	this->cubeShader.setInt("skybox", 0);
+	this->cubeShader.setInt("shadingChoice", this->shadingChoice);
 
 	this->cubeShader.setInt("shininess", 512);
 
@@ -422,10 +485,29 @@ void Simulation::DrawText()
 	this->textRenderer->Draw(this->textShader, "DeltaTime: " + std::to_string(this->deltaTime), 0.0f, (float)this->WINDOW_HEIGHT - 4 * (float)this->fontSize, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
 
 	this->textRenderer->Draw(this->textShader, "Start: " + std::to_string(this->start), this->WINDOW_WIDTH / 2, (float)this->WINDOW_HEIGHT - 1 * (float)this->fontSize, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+	std::string shading = "Colors";
+	if (this->shadingChoice == 1) {
+		shading = "Reflection";
+	}
+	this->textRenderer->Draw(this->textShader, "Shading: " + shading, this->WINDOW_WIDTH / 2, (float)this->WINDOW_HEIGHT - 2 * (float)this->fontSize, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+	
+	std::string skyboxes[] = { "Ocean", "Space", "Forest", "City" };
+	this->textRenderer->Draw(this->textShader, "Skybox: " + skyboxes[skyBoxChoice-1], this->WINDOW_WIDTH / 2, (float)this->WINDOW_HEIGHT - 3 * (float)this->fontSize, 1.0f, glm::vec3(1.0f, 1.0f, 1.0f));
 }
 
 void Simulation::DrawSkyBox()
 {
-	//this->skyBox->render(this->cubeMapShader, this->camera, this->projection);
-	this->spaceBox->render(this->cubeMapShader, this->camera, this->projection);
+	switch (this->skyBoxChoice) {
+	case 2:
+		this->spaceBox->render(this->cubeMapShader, this->camera, this->projection);
+		break;	
+	case 3:
+		this->forestBox->render(this->cubeMapShader, this->camera, this->projection);
+		break;	
+	case 4:
+		this->cityBox->render(this->cubeMapShader, this->camera, this->projection);
+		break;
+	default:
+		this->skyBox->render(this->cubeMapShader, this->camera, this->projection);
+	}
 }

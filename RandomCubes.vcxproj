@@ -154,23 +154,15 @@
     <ClCompile Include="imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="imgui\imgui_tables.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
-    <ClCompile Include="src\SkyBox.cpp" />
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\RandomCubes.cpp" />
-    <ClCompile Include="src\ModelHandler.cpp" />
     <ClCompile Include="src\Simulation.cpp" />
     <ClCompile Include="src\stb_handler.cpp" />
-    <ClCompile Include="src\TextRenderer.cpp" />
-    <ClCompile Include="src\WindowHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Skybox.h" />
     <ClInclude Include="src\Engine.h" />
-    <ClInclude Include="src\ModelHandler.h" />
     <ClInclude Include="src\Simulation.h" />
-    <ClInclude Include="src\TextRenderer.h" />
-    <ClInclude Include="src\WindowHandler.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

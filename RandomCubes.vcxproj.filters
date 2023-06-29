@@ -16,9 +16,6 @@
     <Filter Include="Quelldateien\imgui">
       <UniqueIdentifier>{7e13a021-eeb9-486d-87cb-9e4ce3ed5916}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Headerdateien\Helper.h">
-      <UniqueIdentifier>{a86613b0-8aba-4f7d-bcf8-c1db409bc313}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Quelldateien\Helper.cpp">
       <UniqueIdentifier>{5f4cd613-1623-45e2-bd98-7841584fb5e6}</UniqueIdentifier>
     </Filter>
@@ -80,22 +77,10 @@
     <ClCompile Include="src\Engine.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="src\WindowHandler.cpp">
-      <Filter>Quelldateien\Helper.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\TextRenderer.cpp">
-      <Filter>Quelldateien\Helper.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\ModelHandler.cpp">
-      <Filter>Quelldateien\Helper.cpp</Filter>
-    </ClCompile>
     <ClCompile Include="src\glad.c">
       <Filter>Quelldateien\Helper.cpp</Filter>
     </ClCompile>
     <ClCompile Include="src\stb_handler.cpp">
-      <Filter>Quelldateien\Helper.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SkyBox.cpp">
       <Filter>Quelldateien\Helper.cpp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -105,18 +90,6 @@
     </ClInclude>
     <ClInclude Include="src\Simulation.h">
       <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="src\ModelHandler.h">
-      <Filter>Headerdateien\Helper.h</Filter>
-    </ClInclude>
-    <ClInclude Include="src\TextRenderer.h">
-      <Filter>Headerdateien\Helper.h</Filter>
-    </ClInclude>
-    <ClInclude Include="src\WindowHandler.h">
-      <Filter>Headerdateien\Helper.h</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Skybox.h">
-      <Filter>Headerdateien\Helper.h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,15 +1,24 @@
-#include "TextRenderer.h"
+#pragma once
+#include <Shader/Shader.h>
+#include <ft2build.h>
+#include <map>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
-TextRenderer::TextRenderer(int fontSize, int w_width, int w_height)
+#include FT_FREETYPE_H
+
+//Handles Textbuffer and font initialization and offers renderfunction for easy Textrendering 
+class TextRenderer
 {
+public:
+	TextRenderer(int fontSize, int w_width, int w_height){
 	this->fontSize = fontSize;
 	this->initFont();
 	this->initBuffer();
 	this->projection = glm::ortho(0.0f, (float)w_width, 0.0f, (float)w_height);
-}
-
-void TextRenderer::Draw(Shader& s, std::string text, float x, float y, float scale, glm::vec3 color)
-{
+	};
+	void Draw(Shader& s, std::string text, float x, float y, float scale, glm::vec3 color){
 	//@ JoeyDeVries
 // activate corresponding render state	
 	s.use();
@@ -52,10 +61,29 @@ void TextRenderer::Draw(Shader& s, std::string text, float x, float y, float sca
 	}
 	glBindVertexArray(0);
 	glBindTexture(GL_TEXTURE_2D, 0);
-}
+	};
 
-void TextRenderer::initFont()
-{
+private:
+	FT_Library ft;
+	FT_Face face;
+	int fontSize;
+
+	struct Character {
+		unsigned int TextureID;  // ID handle of the glyph texture
+		glm::ivec2   Size;       // Size of glyph
+		glm::ivec2   Bearing;    // Offset from baseline to left/top of glyph
+		unsigned int Advance;    // Offset to advance to next glyph
+	};
+
+	std::map<char, Character> Characters;
+
+	glm::mat4 projection;
+
+	//Buffer
+	unsigned int VAO;
+	unsigned int VBO;
+
+	void initFont(){
 	//FreeType Library Setup @JoeyDeVries
 	if (FT_Init_FreeType(&this->ft))
 		std::cout << "ERROR::FREETYPE: Could not init FreeType Library" << std::endl;
@@ -109,10 +137,8 @@ void TextRenderer::initFont()
 	glBindTexture(GL_TEXTURE_2D, 0);
 	FT_Done_Face(face);
 	FT_Done_FreeType(ft);
-}
-
-void TextRenderer::initBuffer()
-{
+	};
+	void initBuffer(){
 	//Text Buffer
 	glGenVertexArrays(1, &this->VAO);
 	glGenBuffers(1, &this->VBO);
@@ -124,4 +150,6 @@ void TextRenderer::initBuffer()
 	glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(float), 0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
-}
+	};
+};
+
