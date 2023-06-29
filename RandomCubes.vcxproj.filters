@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Quelldateien\imgui">
+      <UniqueIdentifier>{7e13a021-eeb9-486d-87cb-9e4ce3ed5916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headerdateien\Helper.h">
+      <UniqueIdentifier>{a86613b0-8aba-4f7d-bcf8-c1db409bc313}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quelldateien\Helper.cpp">
+      <UniqueIdentifier>{5f4cd613-1623-45e2-bd98-7841584fb5e6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\cube.fs">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="Shader\cube.vs">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="Shader\screen.fs">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="Shader\screen.vs">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="Shader\text.fs">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="Shader\text.vs">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="Shader\cubemap.fs">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="Shader\cubemap.vs">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="imgui\imgui_demo.cpp">
+      <Filter>Quelldateien\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>Quelldateien\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_glfw.cpp">
+      <Filter>Quelldateien\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_opengl3.cpp">
+      <Filter>Quelldateien\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tables.cpp">
+      <Filter>Quelldateien\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>Quelldateien\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>Quelldateien\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RandomCubes.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Simulation.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WindowHandler.cpp">
+      <Filter>Quelldateien\Helper.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TextRenderer.cpp">
+      <Filter>Quelldateien\Helper.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ModelHandler.cpp">
+      <Filter>Quelldateien\Helper.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\glad.c">
+      <Filter>Quelldateien\Helper.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stb_handler.cpp">
+      <Filter>Quelldateien\Helper.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SkyBox.cpp">
+      <Filter>Quelldateien\Helper.cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Engine.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Simulation.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ModelHandler.h">
+      <Filter>Headerdateien\Helper.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TextRenderer.h">
+      <Filter>Headerdateien\Helper.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WindowHandler.h">
+      <Filter>Headerdateien\Helper.h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Skybox.h">
+      <Filter>Headerdateien\Helper.h</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
