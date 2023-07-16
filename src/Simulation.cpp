@@ -65,11 +65,6 @@ Simulation::Simulation(GLFWwindow* window, int WINDOW_WIDTH, int WINDOW_HEIGHT)
 	this->initModels();
 	this->initBuffer();
 
-	this->skyBox = new Skybox(this->sky);
-	this->spaceBox = new Skybox(this->space);
-	this->forestBox = new Skybox(this->forest);
-	this->cityBox = new Skybox(this->city);
-
 	//ImGUI Setup
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
@@ -232,6 +227,12 @@ void Simulation::initVariables()
 	this->translations.push_back(glm::vec3(0.0f));
 	this->colors.push_back(BLUE_GREEN);
 	this->counter = 0;
+
+	//Skybox
+	this->oceanBox = new Skybox(this->ocean);
+	this->spaceBox = new Skybox(this->space);
+	this->forestBox = new Skybox(this->forest);
+	this->cityBox = new Skybox(this->city);
 	this->skyBoxChoice = 1;
 
 }
@@ -508,6 +509,6 @@ void Simulation::DrawSkyBox()
 		this->cityBox->render(this->cubeMapShader, this->camera, this->projection);
 		break;
 	default:
-		this->skyBox->render(this->cubeMapShader, this->camera, this->projection);
+		this->oceanBox->render(this->cubeMapShader, this->camera, this->projection);
 	}
 }

@@ -97,14 +97,14 @@ private:
 	float* quadVertices;
 
 	//Skybox
-	Skybox *skyBox;
+	Skybox *oceanBox;
 	Skybox *spaceBox;
 	Skybox* forestBox;
 	Skybox* cityBox;
 	int skyBoxChoice;
 	int shadingChoice;
 
-	std::vector<std::string> sky
+	std::vector<std::string> ocean
 	{
 			"resources\\textures\\skybox\\right.jpg",
 			"resources\\textures\\skybox\\left.jpg",
