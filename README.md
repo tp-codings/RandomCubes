@@ -9,7 +9,7 @@ This Project is based on my little (for sure improvable) "[Engine](https://githu
 
 # Getting Started
 1. Clone Repository
-`git clone https://github.com/tp-codings/KITTIVIS_3D.git`
+`git clone https://github.com/tp-codings/RandomCubes.git`
 2. Build Executable (e.g. Visual Studio)
 
 # Usage
