@@ -1,5 +1,6 @@
 # Random Cubes
 A program that generates a line of blocks in threedimensional space block after block with random orientations. 
+This Project is based on my little (for sure improvable) "[Engine](https://github.com/tp-codings/Little_OpenGL_Simulation_Engine/edit/master/README.md)" for OpenGL simulations. 
 
 ## Features
 - interactive movement of the camera in threedimensional space
