@@ -13,7 +13,6 @@ This Project is based on my little (for sure improvable) "[Engine](https://githu
 2. Build Executable (e.g. Visual Studio)
 
 # User Manual
-Movement:
 - W: Forward
 - A: Left
 - S: Back
