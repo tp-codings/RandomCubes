@@ -33,3 +33,13 @@ Other:
 
 # Open Issues
 Actually this was inspired by this [YouTube Video](https://www.youtube.com/watch?v=03Uw0P08Mj4) by Coder Space. So why I decided to change orientation of the cubes randomly? I have no idea. 
+
+# Contact Information
+
+Feel free to reach out to me:
+
+- **Email:** [tobipaul50@gmail.com](mailto:tobipaul50@gmail.com)
+- **LinkedIn:** [Tobias Paul](https://www.linkedin.com/in/tobias-paul-657513276/)
+- **GitHub:** [@tp-codings](https://github.com/tp-codings)
+
+Looking forward to connecting with you! 😊
