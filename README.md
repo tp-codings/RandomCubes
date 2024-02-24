@@ -14,6 +14,14 @@ This Project is based on my little (for sure improvable) "[Engine](https://githu
 - directional light shading
 
 # Getting Started
+## Prerequisites and basic information
+
+- This application is tested in windows 10/11
+- This repo does not provide an executable -> you have to compile your own (I used Visual Studio)
+- I don't guarantee that every corner case has been taken into account. The project is part of my learning process for C++ and OpenGL
+- All dependencies are included in this repo, so it is almost plug and play :)
+
+## Installation
 1. Clone Repository
 `git clone https://github.com/tp-codings/RandomCubes.git`
 2. Build Executable (e.g. Visual Studio)
