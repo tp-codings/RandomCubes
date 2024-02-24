@@ -12,7 +12,7 @@ This Project is based on my little (for sure improvable) "[Engine](https://githu
 `git clone https://github.com/tp-codings/RandomCubes.git`
 2. Build Executable (e.g. Visual Studio)
 
-# Usage
+# User Manual
 Movement:
 - W: Forward
 - A: Left
@@ -24,6 +24,12 @@ Movement:
 Other:
 - F: Open Settings (ImGui)
 - Enter: Start / Stopp Line
+
+# Examples
+
+![image](https://github.com/tp-codings/RandomCubes/assets/118997294/de40d887-eead-48a8-818d-5b5f0d7728a7)
+![image](https://github.com/tp-codings/RandomCubes/assets/118997294/6d74afbd-30db-409c-8c64-55ace7796b9a)
+
 
 # Open Issues
 Actually this was inspired by this [YouTube Video](https://www.youtube.com/watch?v=03Uw0P08Mj4) by Coder Space. So why I decided to change orientation of the cubes randomly? I have no idea. 
