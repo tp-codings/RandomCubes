@@ -2,6 +2,12 @@
 A program that generates a line of blocks in threedimensional space block after block with random orientations. 
 This Project is based on my little (for sure improvable) "[Engine](https://github.com/tp-codings/Little_OpenGL_Simulation_Engine/edit/master/README.md)" for OpenGL simulations. 
 
+## Project Overview
+
+| Personal Rating | Year of Development | Languages | Tools | Type of Application |
+| --- | --- | --- | --- | --- |
+| ⭐️⭐️⭐️ (3/5) | 2023 | C++ | OpenGL, GLFW, ImGUI, Freetype | Simulation |
+
 ## Features
 - interactive movement of the camera in threedimensional space
 - different sky boxes
